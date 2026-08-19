@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Step 5: Secure app-relay communication.
+    Blocks all cleartext (HTTP) traffic app-wide — only HTTPS is allowed.
+    This stops the app from ever accidentally sending the X-App-Secret
+    header over an unencrypted connection, even if RELAY_URL is misconfigured.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

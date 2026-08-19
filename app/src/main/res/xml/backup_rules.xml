@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Step 18: excludes the local user profile (name, DOB, bio, consent flags —
+    Step 6) from Android's legacy backup system (pre-Android 12 / Auto Backup
+    for Apps). Without this, a device backup/restore could copy identity
+    data to another device or Google's backup storage.
+-->
+<full-backup-content>
+    <exclude domain="sharedpref" path="tva_profile.preferences_pb" />
+</full-backup-content>
